@@ -1,0 +1,65 @@
+<div class="container px-5">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-lg">
+                    <h1>Nouvelle fiche</h1>
+                </div>
+                <div class="col-sm">
+                    <button id="submit" class="btn btn-primary float-end">Enregistrer</button>
+                </div>
+            </div>
+            <form id="formNewRecipe">
+                <div class="mb-3">
+                    <label>Nom</label>
+                    <input type="text" name="name" class="form-control" placeholder="Bûche Oréale (Banane/passion)">
+                </div>
+                <div class="mb-3">
+                    <label>Photo</label>
+                    <input type="file" name="image" class="form-control" accept="image/*">
+                </div>
+                <h2>Composition</h2>
+                <div id="compo-container" class="mb-3">
+                    <template id="compo-template">
+                        <div class="row py-3 my-2 bg-light">
+                            <div class="col">
+                                <div class="mb-2 text-end">
+                                    <button type="button" class="btn-close"></button>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control fw-bold input-title" placeholder="Titre">
+                                </div>
+                                <div class="mb-2">
+                                    <ul class="list-group">
+                                        <li class="list-group-item active text-center" role="button">
+                                            Ajouter un ingrédient
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <textarea class="form-control" placeholder="Procédé"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template id="compo-list-item">
+                        <li class="list-group-item" contenteditable="true"></li>
+                    </template>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="button" id="btnAddCompo" class="btn btn-outline-primary">
+                        <!-- <i class="bi-plus-circle"></i> -->
+                        Ajouter une composition
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ContextMenu for list items -->
+<ul id="context-menu-list-item" class="list-group position-absolute d-none" style="z-index: 1000;">
+    <li class="list-group-item list-group-item-action list-group-item-danger" role="button">
+        Supprimer
+    </li>
+</ul>
